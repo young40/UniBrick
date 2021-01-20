@@ -48,7 +48,7 @@
   "scopedRegistries": [
     {
       "name": "package.openupm.com",
-      "url": "https://package.openupm.com",
+      "url": "https://package.openupm.cn",
       "scopes": [
         "com.cysharp.unitask",
         "com.neuecc.unirx",

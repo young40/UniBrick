@@ -26,7 +26,7 @@ MonoBehaviour:
     m_Capabilities: 7
   - m_Id: scoped:package.openupm.com
     m_Name: package.openupm.com
-    m_Url: https://package.openupm.com
+    m_Url: https://package.openupm.cn
     m_Scopes:
     - com.cysharp.unitask
     - com.neuecc.unirx
@@ -48,7 +48,7 @@ MonoBehaviour:
     m_Original:
       m_Id: scoped:package.openupm.com
       m_Name: package.openupm.com
-      m_Url: https://package.openupm.com
+      m_Url: https://package.openupm.cn
       m_Scopes:
       - com.cysharp.unitask
       - com.neuecc.unirx
@@ -65,7 +65,7 @@ MonoBehaviour:
       m_Capabilities: 0
     m_Modified: 0
     m_Name: package.openupm.com
-    m_Url: https://package.openupm.com
+    m_Url: https://package.openupm.cn
     m_Scopes:
     - com.cysharp.unitask
     - com.neuecc.unirx
