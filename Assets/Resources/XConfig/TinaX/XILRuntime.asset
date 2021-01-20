@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: XILRuntime
   m_EditorClassIdentifier: 
   Enable: 1
-  LoadAssemblies: []
-  EntryClass: 
-  EntryMethod: 
-  EditorLoadAssemblyPaths: []
+  LoadAssemblies:
+  - AssemblyPath: Assets/App/Assemblies/GameBrick.dll.bytes
+    SymbolPath: Assets/App/Assemblies/GameBrick.pdb.bytes
+  EntryClass: GameInit
+  EntryMethod: Start
+  EditorLoadAssemblyPaths:
+  - AssemblyPath: Assets/App/Assemblies/GameBrick.dll.bytes
+    SymbolPath: Assets/App/Assemblies/GameBrick.pdb.bytes
   EditorCLRBindingCodeOutputPath: Assets/ILRuntime/Generated
