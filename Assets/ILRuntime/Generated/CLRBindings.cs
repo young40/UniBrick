@@ -18,6 +18,11 @@ namespace ILRuntime.Runtime.Generated
         public static void Initialize(ILRuntime.Runtime.Enviorment.AppDomain app)
         {
             UnityEngine_Debug_Binding.Register(app);
+            TinaX_XCore_Binding.Register(app);
+            TinaX_IXCore_Binding.Register(app);
+            System_Array_Binding.Register(app);
+            TinaX_Container_IServiceContainer_Binding.Register(app);
+            TinaX_UIKit_IUIKit_Binding.Register(app);
 
             ILRuntime.CLR.TypeSystem.CLRType __clrType = null;
             __clrType = (ILRuntime.CLR.TypeSystem.CLRType)app.GetType (typeof(UnityEngine.Vector3));

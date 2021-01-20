@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: UIKitConfig
   m_EditorClassIdentifier: 
   EnableUIKit: 1
-  UINameMode: 0
+  UINameMode: 1
   DefaultUIGroup: {fileID: 0}
   UIRootDirectoryLoadPath: 
   UseUICamera: 0

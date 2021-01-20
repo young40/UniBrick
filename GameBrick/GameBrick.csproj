@@ -35,13 +35,32 @@
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Xml" />
-        <Reference Include="UnityEngine">
-            <HintPath>/Applications/Unity/Hub/Editor/2020.2.1f1/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+        <Reference Include="TinaX.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Library\ScriptAssemblies\TinaX.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="TinaX.UIKit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Library\ScriptAssemblies\TinaX.UIKit.dll</HintPath>
+        </Reference>
+        <Reference Include="TinaX.VFS, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Library\ScriptAssemblies\TinaX.VFS.dll</HintPath>
+        </Reference>
+        <Reference Include="TinaX.XComponent, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Library\ScriptAssemblies\TinaX.XComponent.dll</HintPath>
+        </Reference>
+        <Reference Include="UniRx, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Library\ScriptAssemblies\UniRx.dll</HintPath>
+        </Reference>
+        <Reference Include="UniTask, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\Library\ScriptAssemblies\UniTask.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>UnityDlls\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="GameInit.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="SetDebug.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
