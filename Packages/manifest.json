@@ -54,15 +54,16 @@
         "com.cysharp.unitask",
         "com.neuecc.unirx",
         "com.openupm",
-        "com.ourpalm.ilruntime",
-        "io.nekonya.tinax.core",
-        "io.nekonya.tinax.ilruntime",
-        "io.nekonya.tinax.uikit",
-        "io.nekonya.tinax.uikit.ilruntime",
-        "io.nekonya.tinax.vfs",
-        "io.nekonya.tinax.xcomponent",
-        "io.nekonya.tinax.xcomponent.ilruntime"
+        "io.nekonya.tinax.uikit.ilruntime"
       ]
-    }
+    },
+      {
+          "name": "npmjs",
+          "url": "https://registry.npm.taobao.org",
+          "scopes": [
+              "com.ourpalm.ilruntime",
+              "io.nekonya"
+          ]
+      }
   ]
 }
