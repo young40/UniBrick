@@ -13,7 +13,7 @@ public class GameInit
         var core = XCore.GetMainInstance();
         var uikit = core.Services.Get<IUIKit>();
 
-        uikit.OpenUIAsync("Assets/UI/SetDebug.prefab", new SetDebug(), (entity, exception) =>
+        uikit.OpenUIAsync("Assets/UI/SuperPowerEntry/SuperPowerEntry.prefab", new SuperPowerEntry(), (entity, exception) =>
         {
             if (exception != null)
             {
