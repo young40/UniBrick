@@ -31,6 +31,7 @@ public class BootStrap : IXBootstrap
         xil.RegisterXComponent();
         xil.RegisterUIKit();
 
+        xil.DelegateManager.RegisterMethodDelegate<Int32>();
         xil.DelegateManager.RegisterMethodDelegate<Int32, Int32>();
         xil.DelegateManager.RegisterMethodDelegate<TinaX.VFSKit.ISceneAsset, TinaX.XException>();
         xil.DelegateManager.RegisterDelegateConvertor<TinaX.UIKit.DataBinding.BindableProperty<Int32>.ValueChangedDalegate>(act =>
@@ -38,6 +39,14 @@ public class BootStrap : IXBootstrap
             return new TinaX.UIKit.DataBinding.BindableProperty<Int32>.ValueChangedDalegate((oldValue, newValue) =>
             {
                 ((Action<System.Int32, System.Int32>)act)(oldValue, newValue);
+            });
+        });
+        
+        xil.DelegateManager.RegisterDelegateConvertor<UnityEngine.Events.UnityAction<System.Int32>>((act) =>
+        {
+            return new UnityEngine.Events.UnityAction<System.Int32>((arg0) =>
+            {
+                ((Action<System.Int32>)act)(arg0);
             });
         });
     }
