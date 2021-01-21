@@ -22,7 +22,7 @@ public class GameInit
         });
 
         var vfs = core.Services.Get<IVFS>();
-        vfs.LoadSceneAsync("Assets/Scenes/Debug.unity", (scene, exception) =>
+        vfs.LoadSceneAsync("Assets/Scenes/SuperPowerEntry.unity", (scene, exception) =>
         {
             if (exception == null)
             {
