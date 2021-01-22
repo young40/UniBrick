@@ -30,7 +30,7 @@ public class SPEServerList
 
         mDropdown.options.Add(new Dropdown.OptionData("+新增服务器"));
 
-        mDropdown.captionText.text = mDropdown.options[0].text;
+        mDropdown.value = 0;
 
         mDropdown.onValueChanged.AddListener(delegate(int value)
         {
@@ -44,14 +44,8 @@ public class SPEServerList
     private void OpenAddServerPanel()
     {
         var uikit = XCore.GetMainInstance().GetService<IUIKit>();
-        
+
         uikit.OpenUIAsync("Assets/UI/SuperPowerEntry/SPEManageServer.prefab", new SPEManageServerList(mDropdown),
-            new OpenUIParam(){UseMask = true, CloseByMask = true}, (entity, exception) =>
-            {
-                if (exception != null)
-                {
-                    Debug.LogException(exception);
-                }
-            });
+            new OpenUIParam() {UseMask = true, CloseByMask = true}, ExceptionHandler.EntityException);
     }
 }
