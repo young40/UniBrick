@@ -18,7 +18,5 @@ MonoBehaviour:
     SymbolPath: Assets/App/Assemblies/GameBrick.pdb.bytes
   EntryClass: GameInit
   EntryMethod: Start
-  EditorLoadAssemblyPaths:
-  - AssemblyPath: Assets/App/Assemblies/GameBrick.dll.bytes
-    SymbolPath: Assets/App/Assemblies/GameBrick.pdb.bytes
+  EditorLoadAssemblyPaths: []
   EditorCLRBindingCodeOutputPath: Assets/ILRuntime/Generated
