@@ -13,7 +13,7 @@ public class GameInit
         var core = XCore.GetMainInstance();
         var uikit = core.Services.Get<IUIKit>();
 
-        uikit.OpenUIAsync("Assets/UI/SuperPowerEntry/SuperPowerEntry.prefab", new SuperPowerEntry(), ExceptionHandler.EntityException);
+        uikit.OpenUIAsync("Assets/UI/SuperPowerEntry/SuperPowerEntry.prefab", new SuperPowerEntry.SuperPowerEntry(), ExceptionHandler.EntityException);
 
         var vfs = core.Services.Get<IVFS>();
         vfs.LoadSceneAsync("Assets/Scenes/SuperPowerEntry.unity", (scene, exception) =>
