@@ -68,7 +68,6 @@
         <Compile Include="Helper\ExceptionHandler.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="SuperPowerEntry\SPEManageServerList.cs" />
-        <Compile Include="SuperPowerEntry\SPEServerList.cs" />
         <Compile Include="SuperPowerEntry\SuperPowerEntry.cs" />
         <Compile Include="UITools\Toast.cs" />
     </ItemGroup>

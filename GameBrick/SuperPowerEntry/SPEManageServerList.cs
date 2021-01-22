@@ -1,56 +1,52 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography;
 using TinaX.UIKit;
 using TinaX.UIKit.Components;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace GameBrick.SuperPowerEntry
+public class SPEManageServerList : XUIBehaviour
 {
-    public class SPEManageServerList: XUIBehaviour
+    public InputField name;
+    public InputField ip;
+    public InputField port;
+
+    public Button btnOK;
+
+    private ReactiveCollection<ServerInfo> mList;
+
+    public SPEManageServerList(ReactiveCollection<ServerInfo> list)
     {
-        public InputField name;
-        public InputField ip;
-        public InputField port;
+        this.mList = list;
+    }
 
-        public Button btnOK;
-        
-        private Dropdown mDropdown;
-
-        public SPEManageServerList(Dropdown dropdown)
+    public override void Start()
+    {
+        btnOK.onClick.AddListener(delegate
         {
-            mDropdown = dropdown;
-        }
+            bool fieldOK = true;
 
-        public override void Start()
-        {
-            btnOK.onClick.AddListener(delegate
+            fieldOK = fieldOK && !string.IsNullOrEmpty(name.text);
+            fieldOK = fieldOK && !string.IsNullOrEmpty(ip.text);
+            fieldOK = fieldOK && !string.IsNullOrEmpty(port.text) && (Int32.Parse(port.text) > 0);
+
+            if (fieldOK)
             {
-                bool fieldOK = true;
-
-                fieldOK = fieldOK && !string.IsNullOrEmpty(name.text);
-                fieldOK = fieldOK && !string.IsNullOrEmpty(ip.text);
-                fieldOK = fieldOK && !string.IsNullOrEmpty(port.text) && (Int32.Parse(port.text) > 0);
-                
-                if (fieldOK)
+                mList.Add(new ServerInfo
                 {
-                    mDropdown.options.RemoveAt(mDropdown.options.Count - 1);
-                    
-                    var newOption = string.Format("{0}({1}:{2}", name.text, ip.text, port.text);
-                    mDropdown.options.Add(new Dropdown.OptionData(newOption));
-                    mDropdown.captionText.text = newOption;
-                    
-                    mDropdown.options.Add(new Dropdown.OptionData("+新增服务器"));
-                    
-                    this.Close();
-                }
-                else
-                {
-                    mDropdown.value = 0;
-                    this.Close();
-                }
-            });
-        }
+                    name = name.text, 
+                    ip = ip.text,
+                    port = Int32.Parse(port.text)
+                });
+                this.Close();
+            }
+            else
+            {
+                this.Close();
+            }
+        });
     }
 }

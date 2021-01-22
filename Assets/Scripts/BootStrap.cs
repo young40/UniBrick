@@ -35,6 +35,11 @@ public class BootStrap : IXBootstrap
         appdomain.DelegateManager.RegisterMethodDelegate<Int32, Int32>();
         appdomain.DelegateManager.RegisterMethodDelegate<System.Int64>();
         appdomain.DelegateManager.RegisterMethodDelegate<TinaX.VFSKit.ISceneAsset, TinaX.XException>();
+        
+        appdomain.DelegateManager.RegisterMethodDelegate<UniRx.CollectionAddEvent<ILRuntime.Runtime.Intepreter.ILTypeInstance>>();
+        
+        appdomain.DelegateManager.RegisterFunctionDelegate<System.Int32, System.Boolean>();
+
         appdomain.DelegateManager.RegisterDelegateConvertor<TinaX.UIKit.DataBinding.BindableProperty<Int32>.ValueChangedDalegate>(act =>
         {
             return new TinaX.UIKit.DataBinding.BindableProperty<Int32>.ValueChangedDalegate((oldValue, newValue) =>

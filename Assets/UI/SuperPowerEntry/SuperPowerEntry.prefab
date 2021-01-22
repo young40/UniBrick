@@ -981,7 +981,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u670D\u52A1\u56681"
+  m_Text: "\u65B0\u589E\u670D\u52A1\u5668+"
 --- !u!1 &6401112669535830774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: "\u670D\u52A1\u56681"
+    - m_Text: "\u65B0\u589E\u670D\u52A1\u5668+"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
