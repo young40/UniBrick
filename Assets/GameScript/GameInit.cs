@@ -9,6 +9,7 @@ public class GameInit
     public static void Start()
     {
         Debug.Log("Hello from ILRuntime.");
+        Debug.Log("Hello from ILRuntime.");
 
         var core = XCore.GetMainInstance();
         var uikit = core.Services.Get<IUIKit>();
