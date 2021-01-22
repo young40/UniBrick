@@ -30,6 +30,7 @@ public class SPEServerList
 
         mDropdown.options.Add(new Dropdown.OptionData("+新增服务器"));
 
+        mDropdown.value = mDropdown.options.Count - 1;
         mDropdown.value = 0;
 
         mDropdown.onValueChanged.AddListener(delegate(int value)
