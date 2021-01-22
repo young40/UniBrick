@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &940544020588077984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7828102294370907529}
+  - component: {fileID: 1290758432013576482}
+  m_Layer: 5
+  m_Name: animation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7828102294370907529
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940544020588077984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4426980756442128887}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1290758432013576482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940544020588077984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48be6bdd45d52447a979279a2f04995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Duration: 0.5
+  title: ani
+  playOnAwake: 0
+  pingPong: 0
+  DelayBefore: 1.5
+  onFinish:
+    m_PersistentCalls:
+      m_Calls: []
+  AniTarget: {fileID: 7200015250559860557}
+  AutoOriginValue: 0
+  FromValue: {x: 0, y: 0}
+  AutoTargetValue: 0
+  ToValue: {x: 0, y: 100}
+  Ease: 0
 --- !u!1 &1868214813059431717
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +93,7 @@ RectTransform:
   m_Children:
   - {fileID: 2155263097372760597}
   m_Father: {fileID: 4426980756442128887}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -107,6 +169,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 7828102294370907529}
   - {fileID: 7200015250559860557}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -171,7 +234,7 @@ MonoBehaviour:
   SortingLayerId: 0
   AllowMultiple: 1
   UIMainHandler: {fileID: 5803419760514603014}
-  UIShowAni: {fileID: 0}
+  UIShowAni: {fileID: 1290758432013576482}
   UIExitAni: {fileID: 0}
 --- !u!114 &5803419760514603014
 MonoBehaviour:
@@ -185,7 +248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9087ad9b46b1f4b48b841604dbed307d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UObjectBindInfos: []
+  UObjectBindInfos:
+  - Name: txt_msg
+    Object: {fileID: 8678087339868259999}
+  - Name: ani_out
+    Object: {fileID: 1290758432013576482}
   TypeBindInfos: []
 --- !u!1 &6993016970922602934
 GameObject:
@@ -199,7 +266,7 @@ GameObject:
   - component: {fileID: 3754331130809058417}
   - component: {fileID: 8678087339868259999}
   m_Layer: 5
-  m_Name: Text
+  m_Name: msg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -26,15 +26,16 @@ public class BootStrap : IXBootstrap
     {
     }
 
-    private void RegisterILRuntimes(IXILRuntime xil)
+    private void RegisterILRuntimes(IXILRuntime appdomain)
     {
-        xil.RegisterXComponent();
-        xil.RegisterUIKit();
+        appdomain.RegisterXComponent();
+        appdomain.RegisterUIKit();
 
-        xil.DelegateManager.RegisterMethodDelegate<Int32>();
-        xil.DelegateManager.RegisterMethodDelegate<Int32, Int32>();
-        xil.DelegateManager.RegisterMethodDelegate<TinaX.VFSKit.ISceneAsset, TinaX.XException>();
-        xil.DelegateManager.RegisterDelegateConvertor<TinaX.UIKit.DataBinding.BindableProperty<Int32>.ValueChangedDalegate>(act =>
+        appdomain.DelegateManager.RegisterMethodDelegate<Int32>();
+        appdomain.DelegateManager.RegisterMethodDelegate<Int32, Int32>();
+        appdomain.DelegateManager.RegisterMethodDelegate<System.Int64>();
+        appdomain.DelegateManager.RegisterMethodDelegate<TinaX.VFSKit.ISceneAsset, TinaX.XException>();
+        appdomain.DelegateManager.RegisterDelegateConvertor<TinaX.UIKit.DataBinding.BindableProperty<Int32>.ValueChangedDalegate>(act =>
         {
             return new TinaX.UIKit.DataBinding.BindableProperty<Int32>.ValueChangedDalegate((oldValue, newValue) =>
             {
@@ -42,7 +43,7 @@ public class BootStrap : IXBootstrap
             });
         });
         
-        xil.DelegateManager.RegisterDelegateConvertor<UnityEngine.Events.UnityAction<System.Int32>>((act) =>
+        appdomain.DelegateManager.RegisterDelegateConvertor<UnityEngine.Events.UnityAction<System.Int32>>((act) =>
         {
             return new UnityEngine.Events.UnityAction<System.Int32>((arg0) =>
             {
