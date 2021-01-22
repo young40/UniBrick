@@ -1,9 +1,13 @@
 {
     "name": "GameBrick",
+    "rootNamespace": "",
     "references": [
-        "TinaX.Core"
+        "TinaX.Core",
+        "TinaX.UIKit",
+        "TinaX.VFS",
+        "TinaX.XComponent",
+        "UniRx"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [
         "Editor"
     ],
@@ -12,5 +16,7 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": []
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
