@@ -1,6 +1,5 @@
 using TinaX;
 using TinaX.UIKit;
-using UITools;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -57,7 +56,7 @@ namespace SuperPowerEntry
 
             btnTestAlert.OnClickAsObservable().Subscribe(_ =>
             {
-                Alert.aShow();
+                Alert.Show();
             });
         }
     }

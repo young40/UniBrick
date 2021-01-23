@@ -6,39 +6,38 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UITools
+public class Toast: XUIBehaviour
 {
-    public class Toast : XUIBehaviour
-    {
-        public Text txt_msg;
-        public RectTransformAnchoredPositionAni ani_out;
+    public Text txt_msg;
+    public RectTransformAnchoredPositionAni ani_out;
 
-        private string message;
+    private string message;
+    
+    private Toast() {}
         
-        public static void Show(string msg)
-        {
-            var uiKit = XCore.GetMainInstance().GetService<IUIKit>();
+    public static void Show(string msg)
+    {
+        var uiKit = XCore.GetMainInstance().GetService<IUIKit>();
 
-            uiKit.OpenUIAsync("Assets/UI/Tools/Toast/Toast.prefab", new Toast(msg), ExceptionHandler.EntityException);
-        }
+        uiKit.OpenUIAsync("Assets/UI/Tools/Toast/Toast.prefab", new Toast(msg), ExceptionHandler.EntityException);
+    }
 
-        public Toast(string msg)
-        {
-            this.message = msg;
-        }
+    public Toast(string msg)
+    {
+        this.message = msg;
+    }
 
-        public override void Start()
-        {
-            base.Start();
+    public override void Start()
+    {
+        base.Start();
 
-            txt_msg.text = message;
+        txt_msg.text = message;
             
-            float showTime = ani_out.DelayBefore + ani_out.Duration;
+        float showTime = ani_out.DelayBefore + ani_out.Duration;
 
-            Observable.Timer(TimeSpan.FromSeconds(showTime)).Subscribe(_ =>
-            {
-                this.Close();
-            });
-        }
+        Observable.Timer(TimeSpan.FromSeconds(showTime)).Subscribe(_ =>
+        {
+            this.Close();
+        });
     }
 }

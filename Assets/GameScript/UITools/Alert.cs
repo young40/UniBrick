@@ -3,28 +3,33 @@ using TinaX.UIKit;
 using UniRx;
 using UnityEngine.UI;
 
-public class Alert: XUIBehaviour
+public class Alert
 {
-    public Button btnOK;
+    private AlertUI ui;
+
+    private Alert() {}
     
-    public static Alert aShow()
+    public static Alert Show()
     {
         var newAlert = new Alert();
+        newAlert.ui = new AlertUI();
 
         var uikit = XCore.GetMainInstance().GetService<IUIKit>();
 
-        uikit.OpenUIAsync("Assets/UI/Tools/Alert/Alert.prefab", newAlert, ExceptionHandler.EntityException);
+        uikit.OpenUIAsync("Assets/UI/Tools/Alert/Alert.prefab", newAlert.ui, ExceptionHandler.EntityException);
         
         return newAlert;
     }
 
-    public override void Start()
+    private class AlertUI: XUIBehaviour
     {
-        base.Start();
+        public Button btnOK;
 
-        btnOK.OnClickAsObservable().Subscribe(_ =>
+        public override void Start()
         {
-            this.Close();
-        });
+            base.Start();
+
+            btnOK.OnClickAsObservable().Subscribe(_ => { this.Close(); });
+        }
     }
 }
