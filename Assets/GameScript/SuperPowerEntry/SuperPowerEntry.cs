@@ -17,6 +17,7 @@ namespace SuperPowerEntry
     public class SuperPowerEntry : XUIBehaviour
     {
         public Button ButtonTest;
+        public Button btnTestAlert;
 
         public Dropdown DropdownServerList;
 
@@ -53,6 +54,11 @@ namespace SuperPowerEntry
                 });
 
             ButtonTest.onClick.AddListener(delegate { Toast.Show("Hello @" + Random.Range(0, 10000)); });
+
+            btnTestAlert.OnClickAsObservable().Subscribe(_ =>
+            {
+                Alert.aShow();
+            });
         }
     }
 }
