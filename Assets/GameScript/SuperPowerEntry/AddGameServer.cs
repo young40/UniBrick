@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace SuperPowerEntry
 {
-    public class ManageServerList : XUIBehaviour
+    public class AddGameServer : XUIBehaviour
     {
         public InputField name;
         public InputField ip;
@@ -15,7 +15,7 @@ namespace SuperPowerEntry
 
         private ReactiveCollection<ServerInfo> mList;
 
-        public ManageServerList(ReactiveCollection<ServerInfo> list)
+        public AddGameServer(ReactiveCollection<ServerInfo> list)
         {
             this.mList = list;
         }
