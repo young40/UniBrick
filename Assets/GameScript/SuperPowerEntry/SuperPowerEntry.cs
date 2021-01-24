@@ -48,7 +48,14 @@ namespace SuperPowerEntry
                     var uikit = XCore.GetMainInstance().GetService<IUIKit>();
 
                     uikit.OpenUIAsync("Assets/UI/SuperPowerEntry/SPEManageServer.prefab",
-                        new AddGameServer(mList),
+                        new AddGameServer(((name, ip, port) =>
+                        {
+                            mList.Add(new ServerInfo {name = name, ip = ip, port = port}); 
+                        }), () =>
+                        {
+                            DropdownServerList.value = 0;
+                            Toast.Show("新增服务器失败.");
+                        }),
                         new OpenUIParam() {UseMask = true, CloseByMask = true}, ExceptionHandler.EntityException);
                 });
 

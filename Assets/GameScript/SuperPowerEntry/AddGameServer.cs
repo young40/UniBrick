@@ -13,11 +13,13 @@ namespace SuperPowerEntry
 
         public Button btnOK;
 
-        private ReactiveCollection<ServerInfo> mList;
+        private Action<string, string, int> callbakOK;
+        private Action callbackError;
 
-        public AddGameServer(ReactiveCollection<ServerInfo> list)
+        public AddGameServer(Action<string, string, int> callbakOk, Action callbackError)
         {
-            this.mList = list;
+            this.callbakOK = callbakOk;
+            this.callbackError = callbackError;
         }
 
         public override void Start()
@@ -32,16 +34,12 @@ namespace SuperPowerEntry
 
                 if (fieldOK)
                 {
-                    mList.Add(new ServerInfo
-                    {
-                        name = name.text,
-                        ip = ip.text,
-                        port = Int32.Parse(port.text)
-                    });
+                    callbakOK(name.text, ip.text, Int32.Parse(port.text));
                     this.Close();
                 }
                 else
                 {
+                    callbackError();
                     this.Close();
                 }
             });
