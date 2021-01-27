@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Alert
+    uniqueID: 1083013051
+    locked: 0
+  - name: Toast
+    uniqueID: 3036346081
+    locked: 0
