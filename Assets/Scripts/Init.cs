@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using TinaX;
 using UnityEngine;
 
@@ -14,7 +15,9 @@ public class Init : MonoBehaviour
         var core = XCore.New()
             .UseVFS()
             .UseUIKit()
+#if !NO_ILRUNTIME
             .UseXILRuntime()
+#endif
             .OnServicesStartException((service, exception) =>
             {
                 Debug.LogError(exception);

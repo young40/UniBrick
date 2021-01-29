@@ -6,7 +6,8 @@ using TinaX.XILRuntime;
 using TinaX.XILRuntime.Registers;
 using UnityEngine;
 
-public class BootStrap : IXBootstrap
+#if !NO_ILRUNTIME
+public class ILRuntimeBootStrap : IXBootstrap
 {
     public void OnInit(IXCore core)
     {
@@ -57,3 +58,4 @@ public class BootStrap : IXBootstrap
         });
     }
 }
+#endif

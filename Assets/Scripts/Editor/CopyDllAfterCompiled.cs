@@ -3,6 +3,7 @@ using TinaX.XILRuntime.Const;
 using TinaX.XILRuntime.Internal;
 using UnityEngine;
 
+#if !NO_ILRUNTIME
 public class CopyDllAfterCompiled
 {
     [UnityEditor.Callbacks.DidReloadScripts]
@@ -28,3 +29,4 @@ public class CopyDllAfterCompiled
         Debug.Log("GameScript DLL updated.");
     }
 }
+#endif
