@@ -36,7 +36,7 @@ MonoBehaviour:
   - .apk
   - .so
   GlobalVFS_Ignore_Path_Item:
-  - Editor
   - Resources
-  InitWebVFSOnStart: 1
+  - Editor
+  InitWebVFSOnStart: 0
   DefaultWebVFSBaseUrl: http://127.0.0.1:8080/files/
