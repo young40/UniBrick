@@ -6,7 +6,8 @@
         "TinaX.UIKit",
         "TinaX.VFS",
         "TinaX.XComponent",
-        "UniRx"
+        "UniRx",
+        "PureMVC"
     ],
     "includePlatforms": [
     ],

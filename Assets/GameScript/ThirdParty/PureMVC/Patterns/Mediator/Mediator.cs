@@ -26,7 +26,7 @@ namespace PureMVC.Patterns.Mediator
         ///         will not have a need to be dynamically named.
         ///     </para>
         /// </remarks>
-        public static string NAME = "Mediator";
+        private static string NAME = "Mediator";
 
         /// <summary>
         /// Constructor.
