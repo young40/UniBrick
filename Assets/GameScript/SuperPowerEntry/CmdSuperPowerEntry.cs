@@ -8,6 +8,8 @@ public class CmdSuperPowerEntry: SimpleCommand
     {
         base.Execute(notification);
         
+        GameFacade.Instance.RegisterProxy(new GameServerProxy());
+        
         GameFacade.Instance.RegisterMediator(new SuperPowerEntryMediator());
         GameFacade.Instance.RegisterMediator(new SuperPowerEntrySceneMediator());
     }

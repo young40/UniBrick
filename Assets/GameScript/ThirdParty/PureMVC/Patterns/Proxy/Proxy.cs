@@ -35,7 +35,7 @@ namespace PureMVC.Patterns.Proxy
     public class Proxy: Notifier, IProxy
     {
         /// <summary> Name of the proxy</summary>
-        public const string NAME = "Proxy";
+        private const string NAME = "Proxy";
 
         /// <summary>
         /// Constructor.
