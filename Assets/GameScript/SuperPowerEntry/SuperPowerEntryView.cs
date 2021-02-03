@@ -13,7 +13,7 @@ namespace SuperPowerEntry
         public int port;
     }
 
-    public class SuperPowerEntry : XUIBehaviour
+    public class SuperPowerEntryView : XUIBehaviour
     {
         public Button ButtonTest;
         public Button btnTestAlert;

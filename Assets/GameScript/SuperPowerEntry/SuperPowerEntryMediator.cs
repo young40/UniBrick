@@ -11,7 +11,7 @@ namespace SuperPowerEntry
 
         private GameServerProxy m_GameServerProxy;
 
-        public SuperPowerEntryMediator(): base(NAME, new SuperPowerEntry())
+        public SuperPowerEntryMediator(): base(NAME, new SuperPowerEntryView())
         {
             var core = XCore.GetMainInstance();
             var uikit = core.Services.Get<IUIKit>();
@@ -31,9 +31,9 @@ namespace SuperPowerEntry
             }
         }
 
-        public SuperPowerEntry view
+        public SuperPowerEntryView view
         {
-            get => (SuperPowerEntry) ViewComponent;
+            get => (SuperPowerEntryView) ViewComponent;
         }
     }
 }
