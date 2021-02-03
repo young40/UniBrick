@@ -10,7 +10,7 @@ using TinaX.Services;
 
 public class Init : MonoBehaviour
 {
-    private async void Start()
+    private void Start()
     {
         var core = XCore.New()
             .UseVFS()
