@@ -1,8 +1,9 @@
+using System;
 using TinaX;
 using TinaX.UIKit;
 using UniRx;
-using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 namespace SuperPowerEntry
 {
@@ -20,27 +21,16 @@ namespace SuperPowerEntry
 
         public Dropdown DropdownServerList;
 
-        public ReactiveCollection<ServerInfo> mList;
         [Inject] public IUIKit UIKit { get; set; }
+
+        public Action onAddGameServer;
 
         public override void Start()
         {
-            // mList = new ReactiveCollection<ServerInfo>();
-            //
-            // mList.ObserveAdd().Subscribe(addServer =>
-            // {
-            //     int index = DropdownServerList.options.Count - 1;
-            //     string txt = string.Format("{0} {1}:{2}", addServer.Value.name, addServer.Value.ip,
-            //         addServer.Value.port);
-            //     DropdownServerList.options.Insert(DropdownServerList.options.Count - 1, new Dropdown.OptionData(txt));
-            //
-            //     DropdownServerList.value = index;
-            //     DropdownServerList.captionText.text = txt;
-            // });
-            //
-            // mList.Add(new ServerInfo {name = "测试服", ip = "1.1.1.1", port = 1234});
-            // mList.Add(new ServerInfo {name = "正式服", ip = "2.2.2.2", port = 5678});
-            //
+            DropdownServerList.OnValueChangedAsObservable()
+                .Where(index => index == DropdownServerList.options.Count - 1)
+                .Subscribe(_ => this.onAddGameServer?.Invoke());
+            
             // DropdownServerList.OnValueChangedAsObservable()
             //     .Where(index => index == DropdownServerList.options.Count - 1)
             //     .Subscribe(a =>

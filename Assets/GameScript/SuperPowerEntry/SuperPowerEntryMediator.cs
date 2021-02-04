@@ -1,7 +1,6 @@
 using PureMVC.Patterns.Mediator;
 using TinaX;
 using TinaX.UIKit;
-using UniRx;
 
 namespace SuperPowerEntry
 {
@@ -13,15 +12,17 @@ namespace SuperPowerEntry
 
         public SuperPowerEntryMediator(): base(NAME, new SuperPowerEntryView())
         {
-            var core = XCore.GetMainInstance();
-            var uikit = core.Services.Get<IUIKit>();
-            
-            uikit.OpenUIAsync("Assets/UI/SuperPowerEntry/SuperPowerEntry.prefab", view, ExceptionHandler.EntityException);
+
         }
 
-        public override void OnRegister()
+        public override async void OnRegister()
         {
             base.OnRegister();
+
+            var core = XCore.GetMainInstance();
+            var uikit = core.Services.Get<IUIKit>();
+
+            await uikit.OpenUIAsync("Assets/UI/SuperPowerEntry/SuperPowerEntry.prefab", view);
 
             m_GameServerProxy = (GameServerProxy) GameFacade.Instance.RetrieveProxy(GameServerProxy.NAME);
 
@@ -29,11 +30,26 @@ namespace SuperPowerEntry
             {
                 view.AddGameServer(server);
             }
+
+            view.onAddGameServer = () => OpenAddGameServer();
         }
 
         public SuperPowerEntryView view
         {
             get => (SuperPowerEntryView) ViewComponent;
+        }
+
+        public void OpenAddGameServer()
+        {
+            var uikit = XCore.GetMainInstance().GetService<IUIKit>();
+
+            uikit.OpenUIAsync("Assets/UI/SuperPowerEntry/SPEManageServer.prefab",
+                    new AddGameServer(((name, ip, port) =>
+                    {
+                    }), () =>
+                    {
+                    }),
+                    new OpenUIParam() {UseMask = true, CloseByMask = true}, ExceptionHandler.EntityException);
         }
     }
 }

@@ -5,6 +5,8 @@ namespace SuperPowerEntry
         public GameServerVO(string name, string ip, int port)
         {
             m_Name = name;
+            m_IP = ip;
+            m_Port = port;
         }
 
         public string Name
