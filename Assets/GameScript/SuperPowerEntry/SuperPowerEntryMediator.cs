@@ -41,6 +41,8 @@ namespace SuperPowerEntry
 
         public void OpenAddGameServer()
         {
+            view.SelectFirstGameServer();
+            
             var uikit = XCore.GetMainInstance().GetService<IUIKit>();
 
             uikit.OpenUIAsync("Assets/UI/SuperPowerEntry/SPEManageServer.prefab",

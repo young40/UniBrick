@@ -31,24 +31,6 @@ namespace SuperPowerEntry
                 .Where(index => index == DropdownServerList.options.Count - 1)
                 .Subscribe(_ => this.onAddGameServer?.Invoke());
             
-            // DropdownServerList.OnValueChangedAsObservable()
-            //     .Where(index => index == DropdownServerList.options.Count - 1)
-            //     .Subscribe(a =>
-            //     {
-            //         var uikit = XCore.GetMainInstance().GetService<IUIKit>();
-            //
-            //         uikit.OpenUIAsync("Assets/UI/SuperPowerEntry/SPEManageServer.prefab",
-            //             new AddGameServer(((name, ip, port) =>
-            //             {
-            //                 mList.Add(new ServerInfo {name = name, ip = ip, port = port}); 
-            //             }), () =>
-            //             {
-            //                 DropdownServerList.value = 0;
-            //                 Toast.Show("新增服务器失败.");
-            //             }),
-            //             new OpenUIParam() {UseMask = true, CloseByMask = true}, ExceptionHandler.EntityException);
-            //     });
-
             ButtonTest.onClick.AddListener(delegate { Toast.Show("Hello @" + Random.Range(0, 10000)); });
 
             btnTestAlert.OnClickAsObservable().Subscribe(_ =>
@@ -64,6 +46,11 @@ namespace SuperPowerEntry
              
             DropdownServerList.value = index;
             DropdownServerList.captionText.text = vo.ToString();              
+        }
+
+        public void SelectFirstGameServer()
+        {
+            DropdownServerList.value = 0;
         }
     }
 }
