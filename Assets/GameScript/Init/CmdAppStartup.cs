@@ -11,7 +11,7 @@ namespace GameScript.Init
         {
             base.InitializeMacroCommand();
             
-            AddSubCommand(() => new CmdSuperPowerEntry());
+            AddSubCommand(() => new SuperPowerEntryCommand());
         }
     }
 }

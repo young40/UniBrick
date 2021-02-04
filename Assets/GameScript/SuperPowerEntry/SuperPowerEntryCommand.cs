@@ -2,7 +2,7 @@ using PureMVC.Interfaces;
 using PureMVC.Patterns.Command;
 using SuperPowerEntry;
 
-public class CmdSuperPowerEntry: SimpleCommand
+public class SuperPowerEntryCommand: SimpleCommand
 {
     public override void Execute(INotification notification)
     {
