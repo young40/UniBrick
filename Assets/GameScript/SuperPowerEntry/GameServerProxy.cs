@@ -3,6 +3,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using PureMVC.Patterns.Proxy;
 using UniRx;
+using UnityEngine;
 
 namespace SuperPowerEntry
 {
@@ -47,6 +48,7 @@ namespace SuperPowerEntry
             }
             catch (Exception e)
             {
+                Debug.LogError(e);
                 return false;
             }
             

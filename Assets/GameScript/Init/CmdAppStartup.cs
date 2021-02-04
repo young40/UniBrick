@@ -5,7 +5,7 @@ namespace GameScript.Init
 {
     public class CmdAppStartup: MacroCommand
     {
-        public const string NAME = "CmdAppStartup";
+        public static string NAME = nameof(CmdAppStartup);
 
         protected override void InitializeMacroCommand()
         {
