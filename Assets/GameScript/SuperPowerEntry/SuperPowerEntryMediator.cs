@@ -31,6 +31,8 @@ namespace SuperPowerEntry
                 view.AddGameServer(server);
             }
 
+            view.SelectFirstGameServer();
+
             view.onAddGameServer = () => OpenAddGameServer();
         }
 
@@ -42,16 +44,20 @@ namespace SuperPowerEntry
         public void OpenAddGameServer()
         {
             view.SelectFirstGameServer();
-            
+
             var uikit = XCore.GetMainInstance().GetService<IUIKit>();
 
             uikit.OpenUIAsync("Assets/UI/SuperPowerEntry/SPEManageServer.prefab",
-                    new AddGameServer(((name, ip, port) =>
-                    {
-                    }), () =>
-                    {
-                    }),
-                    new OpenUIParam() {UseMask = true, CloseByMask = true}, ExceptionHandler.EntityException);
+            new AddGameServer(((name, ip, port) =>
+            {
+                var vo = new GameServerVO(name, ip, port);
+                view.AddGameServer(vo);
+                m_GameServerProxy.AddGameServer(vo);
+            }), () =>
+            {
+                Toast.Show("新增服务器失败.");
+            }),
+            new OpenUIParam() {UseMask = true, CloseByMask = true}, ExceptionHandler.EntityException);
         }
     }
 }

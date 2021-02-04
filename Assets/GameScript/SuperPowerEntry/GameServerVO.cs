@@ -1,5 +1,8 @@
+using System;
+
 namespace SuperPowerEntry
 {
+    [Serializable]
     public class GameServerVO
     {
         public GameServerVO(string name, string ip, int port)
