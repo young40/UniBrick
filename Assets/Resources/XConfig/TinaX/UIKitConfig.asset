@@ -22,7 +22,7 @@ MonoBehaviour:
   DefaultUIMaskColor: {r: 0, g: 0, b: 0, a: 1}
   UICanvasScalerMode: 0
   UIScaleFactor: 1
-  ReferencePixelsPerUnit: 1
+  ReferencePixelsPerUnit: 100
   ReferenceResolution: {x: 1600, y: 1200}
   ScreenMatchMode: 0
   CanvasScalerMatchWidthOrHeight: 0
