@@ -1,6 +1,8 @@
+using GameScript.Login;
 using PureMVC.Patterns.Mediator;
 using TinaX;
 using TinaX.UIKit;
+using UnityEngine;
 
 namespace SuperPowerEntry
 {
@@ -34,6 +36,7 @@ namespace SuperPowerEntry
             view.SelectFirstGameServer();
 
             view.onAddGameServer = () => OpenAddGameServer();
+            view.onPressLogin = () => OpenLogin();
         }
 
         public SuperPowerEntryView view
@@ -58,6 +61,11 @@ namespace SuperPowerEntry
                 Toast.Show("新增服务器失败.");
             }),
             new OpenUIParam() {UseMask = true, CloseByMask = true}, ExceptionHandler.EntityException);
+        }
+
+        public void OpenLogin()
+        {
+            GameFacade.Instance.SendNotification(LoginCommand.NAME);
         }
     }
 }

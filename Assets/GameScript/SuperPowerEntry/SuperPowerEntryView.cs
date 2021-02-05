@@ -18,12 +18,15 @@ namespace SuperPowerEntry
     {
         public Button ButtonTest;
         public Button btnTestAlert;
+        public Button btnLogin;
 
         public Dropdown DropdownServerList;
 
         [Inject] public IUIKit UIKit { get; set; }
 
         public Action onAddGameServer;
+
+        public Action onPressLogin;
 
         public override void Start()
         {
@@ -36,6 +39,11 @@ namespace SuperPowerEntry
             btnTestAlert.OnClickAsObservable().Subscribe(_ =>
             {
                 Alert.Show();
+            });
+
+            btnLogin.OnClickAsObservable().Subscribe(_ =>
+            {
+                this.onPressLogin?.Invoke();
             });
         }
 
