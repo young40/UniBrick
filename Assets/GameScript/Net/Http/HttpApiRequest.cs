@@ -23,23 +23,37 @@ public class HttpApiRequest
 
     protected async UniTask<T> Send<T>(HttpApiParam param) where T: HttpApiResponse
     {
-        var resp = (T) Activator.CreateInstance(typeof(T));
+        var req = new UnityWebRequest();
+        T resp;
+
         try
         {
-            var req = new UnityWebRequest();
-
             req.method = this.GetMethod().ToString();
             req.url = this.GetUrl();
 
+            req.downloadHandler = new DownloadHandlerBuffer();
+
             await req.SendWebRequest();
 
-            resp.errCode = 200;
-            resp.errDesc = "Http OK";
+            Debug.LogError(req.downloadHandler);
+            Debug.LogError(req.downloadHandler.text);
+            var txt = req.downloadHandler.text;
+
+            Debug.LogError(txt);
+            resp = JsonUtility.FromJson<T>(txt);
+
+            Debug.LogError("AAAAA");
+            Debug.LogError(req.error);
         }
         catch (Exception e)
         {
+            resp = (T) Activator.CreateInstance(typeof(T));
+
+            Debug.LogError("BBBBB");
+            Debug.LogError(req.error);
+
             resp.errCode = -1;
-            resp.errDesc = "Http Got ERROR";
+            resp.errDesc = e.Message;
 
             Debug.LogError(e);
         }

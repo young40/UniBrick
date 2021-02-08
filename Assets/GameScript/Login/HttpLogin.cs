@@ -7,7 +7,8 @@ namespace GameScript.Login
         public override string GetUrl()
         {
             // return "http://localhost:8889/1.php";
-            return "http://localhost:8889/404.php";
+            return "http://localhost:8889/json.php";
+            // return "http://localhost:8889/404.php";
             // return "https://www.baidu.com";
             // return "https://www.baidu.comxxx";
             //return "pszbt/v1/login";
