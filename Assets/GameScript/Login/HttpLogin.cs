@@ -12,7 +12,7 @@ namespace GameScript.Login
             // return "https://www.baidu.comxxx";
             //return "pszbt/v1/login";
         }
-        
+
         public override HttpApiMethod GetMethod()
         {
             return HttpApiMethod.GET;
@@ -26,11 +26,11 @@ namespace GameScript.Login
 
     public class ParamLogin : HttpApiParam
     {
-        
+
     }
 
     public class ResponseLogin: HttpApiResponse
     {
-        
+
     }
 }

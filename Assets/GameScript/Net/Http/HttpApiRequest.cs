@@ -40,7 +40,7 @@ public class HttpApiRequest
         {
             resp.errCode = -1;
             resp.errDesc = "Http Got ERROR";
-            
+
             Debug.LogError(e);
         }
 
