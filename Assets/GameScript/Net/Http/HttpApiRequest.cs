@@ -68,6 +68,6 @@ public class HttpApiParam
 
 public class HttpApiResponse
 {
-    public int errCode { get; set; }
-    public string errDesc { get; set; }
+    public string errDesc;
+    public int errCode;
 }
