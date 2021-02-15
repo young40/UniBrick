@@ -106,6 +106,13 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "com.yasirkula.ingamedebugconsole": {
+      "version": "1.4.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.cn"
+    },
     "io.nekonya.tinax.core": {
       "version": "6.6.21",
       "depth": 0,
