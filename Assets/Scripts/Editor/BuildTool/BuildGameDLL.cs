@@ -2,8 +2,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Mime;
+using System.Runtime.InteropServices;
 using System.Xml;
 using System.Xml.Linq;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.Emit;
+using TinaX;
+using TinaX.XILRuntime.Const;
+using TinaX.XILRuntime.Internal;
+using UnityEditor;
 using UnityEngine;
 
 namespace Editor.BuildTool
@@ -12,8 +20,9 @@ namespace Editor.BuildTool
     {
         public static void Build(bool isDebug)
         {
+            var assemblyName = "GameBrick";
             var workDir = Directory.GetParent(Application.dataPath).ToString();
-            var projPath = Path.Combine(workDir, "GameBrick.csproj");
+            var projPath = Path.Combine(workDir, assemblyName + ".csproj");
 
             var dllList = FindDllFromCSProj(workDir, projPath);
             foreach (var dll in dllList)
@@ -30,6 +39,68 @@ namespace Editor.BuildTool
             Debug.LogError(csList.Count);
 
 
+            var config = XConfig.GetConfig<XILRTConfig>(XILConst.ConfigPath_Resources);
+
+            if (config == null)
+            {
+                Debug.LogError("Config file not found :" + XILConst.ConfigPath_Resources);
+                return;
+            }
+
+            var dllPath = workDir + "/" + config.LoadAssemblies[0].AssemblyPath;
+            var pdbPath = workDir + "/" + config.LoadAssemblies[0].SymbolPath;
+
+            BuildingGameDllWithRoslyn(assemblyName, dllPath, pdbPath,
+                csList, dllList, isDebug);
+        }
+
+        private static void BuildingGameDllWithRoslyn(string assemblyName, string dllPath, string pdbPath,
+            List<string> csPaths, List<string> refDllPaths, bool isDebug)
+        {
+            var syntaxTrees = new List<SyntaxTree>();
+            var syntaxParseOptions = new CSharpParseOptions(LanguageVersion.Latest);
+
+            foreach (var cs in csPaths)
+            {
+                var content = File.ReadAllText(cs);
+
+                var tree = CSharpSyntaxTree.ParseText(content, syntaxParseOptions);
+                syntaxTrees.Add(tree);
+            }
+
+            var dllMetadataRefs = new List<MetadataReference>();
+            foreach (var refDll in refDllPaths)
+            {
+                dllMetadataRefs.Add(MetadataReference.CreateFromFile(refDll));
+            }
+
+            var compilationOptions = new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary,
+                optimizationLevel: isDebug ? OptimizationLevel.Debug : OptimizationLevel.Release,
+                warningLevel: 4, allowUnsafe: true);
+
+            var compilation = CSharpCompilation.Create(assemblyName, syntaxTrees,  dllMetadataRefs, compilationOptions);
+            var emitOption = new EmitOptions(debugInformationFormat: DebugInformationFormat.PortablePdb);
+
+            var steamDll = new MemoryStream();
+            var steamPdb = new MemoryStream();
+
+            var rs = compilation.Emit(steamDll, steamPdb, options: emitOption);
+
+            File.WriteAllBytes(dllPath, steamDll.GetBuffer());
+            File.WriteAllBytes(pdbPath, steamPdb.GetBuffer());
+
+            Debug.LogError($"Success: {rs.Success}");
+
+            if (!rs.Success)
+            {
+                var fails = rs.Diagnostics.
+                    Where(di => di.IsWarningAsError || di.Severity == DiagnosticSeverity.Error);
+
+                foreach (var f in fails)
+                {
+                    Debug.LogError(f.ToString());
+                }
+            }
         }
 
         private static List<string> FindCsharpFromCSProj(string workDir, string projPath)
@@ -39,7 +110,8 @@ namespace Editor.BuildTool
             var xml = XDocument.Load(projPath);
 
             var list = (from item in xml.Descendants(ns + "Compile")
-                select item.Attribute("Include")?.Value).Distinct().ToList();
+                select item.Attribute("Include")?.Value.Replace("\\", "/")
+                ).Distinct().ToList();
 
             var projectList = (from item in xml.Descendants(ns + "ProjectReference")
                 select item.Attribute("Include")?.Value).ToList();
