@@ -2,7 +2,7 @@ using UnityEditor;
 
 namespace Editor.BuildTool
 {
-    public class EntryEditor
+    public static class EntryEditor
     {
         [MenuItem("TinaX/BuildDll", priority = 9000)]
         public static void BuildDll()
