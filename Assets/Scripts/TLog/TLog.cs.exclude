@@ -1,0 +1,57 @@
+///*
+
+using System.ComponentModel;
+using UnityEngine;
+
+public static class TLog
+{
+    public enum Color
+    {
+        Red,
+        Green,
+        Blue,
+        Magenta,
+        Yellow,
+        Cyan,
+        Orange,
+        Olive,
+        Purple,
+        Lightblue,
+        Grey,
+        White,
+        Black,
+
+        // Violet,
+        // Darkgreen,
+        // Darkorange,
+        // Darkred,
+        // Gold,
+        // Gray,
+        // LightGreen,
+
+        MAX
+    }
+
+    public static bool EnableLog = true;
+
+    public static void Log(string TAG, object obj, Color color)
+    {
+        if (!EnableLog) { return; }
+
+        Debug.Log($"<color={color.ToString().ToLower()}>[{TAG}] {obj}</color>");
+    }
+
+    public static void Test()
+    {
+        for(var i=0; i<(int)Color.MAX; i++)
+        {
+            Test((Color)i);
+        }
+    }
+
+    private static void Test(Color color)
+    {
+        Log(nameof(TLog), $"This is {color.ToString()}", color);
+    }
+}
+//*/
