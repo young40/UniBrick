@@ -1,9 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net.Mime;
-using System.Runtime.InteropServices;
-using System.Xml;
 using System.Xml.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -11,12 +8,11 @@ using Microsoft.CodeAnalysis.Emit;
 using TinaX;
 using TinaX.XILRuntime.Const;
 using TinaX.XILRuntime.Internal;
-using UnityEditor;
 using UnityEngine;
 
 namespace Editor.BuildTool
 {
-    public class BuildGameDLL
+    public static class BuildGameDLL
     {
         public static void Build(bool isDebug)
         {
@@ -24,14 +20,14 @@ namespace Editor.BuildTool
             var workDir = Directory.GetParent(Application.dataPath).ToString();
             var projPath = Path.Combine(workDir, assemblyName + ".csproj");
 
-            var dllList = FindDllFromCSProj(workDir, projPath);
+            var dllList = FindDllFromCsProj(workDir, projPath);
             foreach (var dll in dllList)
             {
                 Debug.LogWarning(dll);
             }
             Debug.LogError(dllList.Count);
 
-            var csList = FindCsharpFromCSProj(workDir, projPath);
+            var csList = FindCsharpFromCsProj(workDir, projPath);
             foreach (var cs in csList)
             {
                 Debug.LogWarning(cs);
@@ -103,7 +99,7 @@ namespace Editor.BuildTool
             }
         }
 
-        private static List<string> FindCsharpFromCSProj(string workDir, string projPath)
+        private static List<string> FindCsharpFromCsProj(string workDir, string projPath)
         {
             XNamespace ns = "http://schemas.microsoft.com/developer/msbuild/2003";
 
@@ -118,14 +114,14 @@ namespace Editor.BuildTool
             foreach (var proj in projectList)
             {
                 var dllProjPath = Path.Combine(workDir, proj);
-                FindCsharpFromCSProj(workDir, dllProjPath).
+                FindCsharpFromCsProj(workDir, dllProjPath).
                     ForEach(csInProj => list.Add(csInProj));
             }
 
             return list;
         }
 
-        private static List<string> FindDllFromCSProj(string workDir, string projPath)
+        private static List<string> FindDllFromCsProj(string workDir, string projPath)
         {
             XNamespace ns = "http://schemas.microsoft.com/developer/msbuild/2003";
 
@@ -139,7 +135,7 @@ namespace Editor.BuildTool
             foreach (var proj in projectList)
             {
                 var dllProjPath = Path.Combine(workDir, proj);
-                FindDllFromCSProj(workDir, dllProjPath).
+                FindDllFromCsProj(workDir, dllProjPath).
                     ForEach(dllInProj => list.Add(dllInProj));
 
                 // var projDll = Path.Combine(workDir, "Library ", "ScriptAssemblies", proj.Replace(".csproj", "dll"));

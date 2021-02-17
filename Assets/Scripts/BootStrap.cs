@@ -1,3 +1,5 @@
+#if !NO_ILRUNTIME
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +8,6 @@ using TinaX.XILRuntime;
 using TinaX.XILRuntime.Registers;
 using UnityEngine;
 
-#if !NO_ILRUNTIME
 public class ILRuntimeBootStrap : IXBootstrap
 {
     public void OnInit(IXCore core)

@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
 using TinaX;
 using UnityEngine;
 
-using TinaX.Core;
 using TinaX.Services;
 
 public class Init : MonoBehaviour

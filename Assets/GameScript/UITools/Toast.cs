@@ -3,7 +3,6 @@ using TinaX;
 using TinaX.UIKit;
 using TinaX.UIKit.Animation;
 using UniRx;
-using UnityEngine;
 using UnityEngine.UI;
 
 public class Toast: XUIBehaviour
