@@ -76,20 +76,22 @@ namespace Editor.BuildTool
 
             var compilation = CSharpCompilation.Create(assemblyName, syntaxTrees,  dllMetadataRefs, compilationOptions);
             var emitOption = new EmitOptions(debugInformationFormat: DebugInformationFormat.PortablePdb);
+            EmitResult result;
 
-            var steamDll = new MemoryStream();
-            var steamPdb = new MemoryStream();
-
-            var rs = compilation.Emit(steamDll, steamPdb, options: emitOption);
-
-            File.WriteAllBytes(dllPath, steamDll.GetBuffer());
-            File.WriteAllBytes(pdbPath, steamPdb.GetBuffer());
-
-            Debug.LogError($"Success: {rs.Success}");
-
-            if (!rs.Success)
+            using (var steamDll = new MemoryStream())
+            using (var steamPdb = new MemoryStream())
             {
-                var fails = rs.Diagnostics.
+                result = compilation.Emit(steamDll, steamPdb, options: emitOption);
+
+                File.WriteAllBytes(dllPath, steamDll.GetBuffer());
+                File.WriteAllBytes(pdbPath, steamPdb.GetBuffer());
+            }
+
+            Debug.LogError($"Success: {result?.Success}");
+
+            if (result != null && result.Success)
+            {
+                var fails = result.Diagnostics.
                     Where(di => di.IsWarningAsError || di.Severity == DiagnosticSeverity.Error);
 
                 foreach (var f in fails)
