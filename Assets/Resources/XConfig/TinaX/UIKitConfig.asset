@@ -17,13 +17,13 @@ MonoBehaviour:
   DefaultUIGroup: {fileID: 0}
   UIRootDirectoryLoadPath: 
   UseUICamera: 0
-  UICameraConfig: {fileID: 11400000, guid: 2053a8881b2f4450c8b1a50f0a3005ff, type: 2}
+  UICameraConfig: {fileID: 0}
   AutoCreateEventSystem: 1
   DefaultUIMaskColor: {r: 0, g: 0, b: 0, a: 1}
   UICanvasScalerMode: 1
   UIScaleFactor: 1
   ReferencePixelsPerUnit: 100
-  ReferenceResolution: {x: 1280, y: 720}
+  ReferenceResolution: {x: 720, y: 1280}
   ScreenMatchMode: 0
   CanvasScalerMatchWidthOrHeight: 0
   PhySicalUnit: 3
