@@ -19,6 +19,7 @@ namespace SuperPowerEntry
         public Button ButtonTest;
         public Button btnTestAlert;
         public Button btnLogin;
+        public Button btnScreenTest;
 
         public Dropdown DropdownServerList;
 
@@ -44,6 +45,14 @@ namespace SuperPowerEntry
             btnLogin.OnClickAsObservable().Subscribe(_ =>
             {
                 this.onPressLogin?.Invoke();
+            });
+
+            btnScreenTest.OnClickAsObservable().Subscribe(_ =>
+            {
+                var core = XCore.GetMainInstance();
+                var uikit = core.Services.Get<IUIKit>();
+
+                uikit.OpenUIAsync("Assets/UI/Test/TestScreen.prefab");
             });
         }
 
