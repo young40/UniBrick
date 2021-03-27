@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.cysharp.unitask": {
-      "version": "2.0.37",
+      "version": "2.2.4",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -43,12 +43,10 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.4",
+      "version": "3.0.5",
       "depth": 0,
       "source": "registry",
-      "dependencies": {
-        "com.unity.test-framework": "1.1.1"
-      },
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
@@ -68,7 +66,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
-      "version": "1.1.22",
+      "version": "1.1.24",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -79,7 +77,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "3.0.1",
+      "version": "3.0.4",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -88,7 +86,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.4.6",
+      "version": "1.4.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -109,19 +107,19 @@
       }
     },
     "com.yasirkula.ingamedebugconsole": {
-      "version": "1.4.2",
+      "version": "1.4.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://package.openupm.cn"
     },
     "io.nekonya.tinax.core": {
-      "version": "6.6.21",
+      "version": "6.6.23",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.neuecc.unirx": "7.1.0",
-        "com.cysharp.unitask": "2.0.37"
+        "com.cysharp.unitask": "2.2.4"
       },
       "url": "https://registry.npm.taobao.org"
     },
@@ -136,13 +134,12 @@
       "url": "https://registry.npm.taobao.org"
     },
     "io.nekonya.tinax.uikit": {
-      "version": "6.6.13",
+      "version": "6.6.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "io.nekonya.tinax.core": "6.6.10",
-        "com.neuecc.unirx": "7.1.0",
-        "io.nekonya.tinax.xcomponent": "6.6.3"
+        "io.nekonya.tinax.core": "6.6.23",
+        "io.nekonya.tinax.xcomponent": "6.6.4"
       },
       "url": "https://registry.npm.taobao.org"
     },
@@ -157,31 +154,21 @@
       },
       "url": "https://package.openupm.cn"
     },
-    "io.nekonya.tinax.uikit.mvvm": {
-      "version": "6.6.2-preview",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "io.nekonya.tinax.core": "6.6.18",
-        "io.nekonya.tinax.uikit": "6.6.13"
-      },
-      "url": "https://registry.npm.taobao.org"
-    },
     "io.nekonya.tinax.vfs": {
-      "version": "6.6.12",
+      "version": "6.6.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "io.nekonya.tinax.core": "6.6.20"
+        "io.nekonya.tinax.core": "6.6.21"
       },
       "url": "https://registry.npm.taobao.org"
     },
     "io.nekonya.tinax.xcomponent": {
-      "version": "6.6.3",
+      "version": "6.6.4",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "io.nekonya.tinax.core": "6.6.5"
+        "io.nekonya.tinax.core": "6.6.7"
       },
       "url": "https://registry.npm.taobao.org"
     },
