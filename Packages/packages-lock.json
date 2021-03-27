@@ -134,12 +134,13 @@
       "url": "https://registry.npm.taobao.org"
     },
     "io.nekonya.tinax.uikit": {
-      "version": "6.6.15",
+      "version": "6.6.13",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "io.nekonya.tinax.core": "6.6.23",
-        "io.nekonya.tinax.xcomponent": "6.6.4"
+        "io.nekonya.tinax.core": "6.6.10",
+        "com.neuecc.unirx": "7.1.0",
+        "io.nekonya.tinax.xcomponent": "6.6.3"
       },
       "url": "https://registry.npm.taobao.org"
     },
@@ -164,11 +165,11 @@
       "url": "https://registry.npm.taobao.org"
     },
     "io.nekonya.tinax.xcomponent": {
-      "version": "6.6.4",
+      "version": "6.6.3",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "io.nekonya.tinax.core": "6.6.7"
+        "io.nekonya.tinax.core": "6.6.5"
       },
       "url": "https://registry.npm.taobao.org"
     },
