@@ -133,6 +133,14 @@
       },
       "url": "https://registry.npm.taobao.org"
     },
+    "io.nekonya.tinax.tween": {
+      "version": "file:../TinaXCode/TinaX.Tween",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.neuecc.unirx": "7.1.0"
+      }
+    },
     "io.nekonya.tinax.uikit": {
       "version": "6.6.18",
       "depth": 0,
@@ -142,6 +150,15 @@
         "io.nekonya.tinax.xcomponent": "6.6.4"
       },
       "url": "https://registry.npm.taobao.org"
+    },
+    "io.nekonya.tinax.uikit.animation": {
+      "version": "file:../TinaXCode/TinaX.UIKit.Animation",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "io.nekonya.tinax.uikit": "6.6.17",
+        "io.nekonya.tinax.tween": "6.6.1"
+      }
     },
     "io.nekonya.tinax.uikit.ilruntime": {
       "version": "6.6.4",

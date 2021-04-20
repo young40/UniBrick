@@ -4,6 +4,8 @@
     "references": [
         "TinaX.Core",
         "TinaX.UIKit",
+        "TinaX.Tween",
+        "TinaX.UIKit.Animation",
         "TinaX.VFS",
         "TinaX.XComponent",
         "UniRx",

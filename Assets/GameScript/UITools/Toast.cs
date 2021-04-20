@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Toast: XUIBehaviour
 {
     public Text txt_msg;
-    public RectTransformAnchoredPositionAni ani_out;
+    public RectTransformAnchoredPositionTween ani_out;
 
     private string message;
     

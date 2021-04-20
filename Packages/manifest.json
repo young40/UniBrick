@@ -13,7 +13,9 @@
     "com.yasirkula.ingamedebugconsole": "1.4.8",
     "io.nekonya.tinax.core": "6.6.24",
     "io.nekonya.tinax.ilruntime": "6.6.4",
+    "io.nekonya.tinax.tween": "file:../TinaXCode/TinaX.Tween",
     "io.nekonya.tinax.uikit": "6.6.18",
+    "io.nekonya.tinax.uikit.animation": "file:../TinaXCode/TinaX.UIKit.Animation",
     "io.nekonya.tinax.uikit.ilruntime": "6.6.4",
     "io.nekonya.tinax.vfs": "6.6.15",
     "com.unity.modules.ai": "1.0.0",
@@ -67,12 +69,12 @@
         "io.nekonya"
       ]
     },
-      {
-          "name": "npmjs",
-          "url": "https://registry.npmjs.org",
-          "scopes": [
-              "com.ourpalm.ilruntime"
-          ]
-      }
+    {
+      "name": "npmjs",
+      "url": "https://registry.npmjs.org",
+      "scopes": [
+        "com.ourpalm.ilruntime"
+      ]
+    }
   ]
 }
