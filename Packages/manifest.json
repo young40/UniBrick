@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.ourpalm.ilruntime": "1.6.6",
+    "com.ourpalm.ilruntime": "1.6.7",
     "com.unity.collab-proxy": "1.3.9",
     "com.unity.device-simulator": "2.2.4-preview",
     "com.unity.ide.rider": "3.0.5",
@@ -11,9 +11,9 @@
     "com.unity.timeline": "1.4.7",
     "com.unity.ugui": "1.0.0",
     "com.yasirkula.ingamedebugconsole": "1.4.8",
-    "io.nekonya.tinax.core": "6.6.23",
-    "io.nekonya.tinax.ilruntime": "6.6.3",
-    "io.nekonya.tinax.uikit": "6.6.13",
+    "io.nekonya.tinax.core": "6.6.24",
+    "io.nekonya.tinax.ilruntime": "6.6.4",
+    "io.nekonya.tinax.uikit": "6.6.18",
     "io.nekonya.tinax.uikit.ilruntime": "6.6.4",
     "io.nekonya.tinax.vfs": "6.6.15",
     "com.unity.modules.ai": "1.0.0",
@@ -61,12 +61,18 @@
       ]
     },
     {
-      "name": "npmjs",
+      "name": "npmjstaobao",
       "url": "https://registry.npm.taobao.org",
       "scopes": [
-        "com.ourpalm.ilruntime",
         "io.nekonya"
       ]
-    }
+    },
+      {
+          "name": "npmjs",
+          "url": "https://registry.npmjs.org",
+          "scopes": [
+              "com.ourpalm.ilruntime"
+          ]
+      }
   ]
 }

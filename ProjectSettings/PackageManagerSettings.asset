@@ -35,12 +35,18 @@ MonoBehaviour:
     - com.yasirkula.ingamedebugconsole
     m_IsDefault: 0
     m_Capabilities: 0
-  - m_Id: scoped:npmjs
-    m_Name: npmjs
+  - m_Id: scoped:npmjstaobao
+    m_Name: npmjstaobao
     m_Url: https://registry.npm.taobao.org
     m_Scopes:
-    - com.ourpalm.ilruntime
     - io.nekonya
+    m_IsDefault: 0
+    m_Capabilities: 0
+  - m_Id: scoped:npmjs
+    m_Name: npmjs
+    m_Url: https://registry.npmjs.org
+    m_Scopes:
+    - com.ourpalm.ilruntime
     m_IsDefault: 0
     m_Capabilities: 0
   m_UserSelectedRegistryName: package.openupm.com
