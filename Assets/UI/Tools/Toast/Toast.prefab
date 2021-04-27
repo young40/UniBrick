@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7828102294370907529}
+  - component: {fileID: 6309291524670124133}
   m_Layer: 5
   m_Name: animation
   m_TagString: Untagged
@@ -35,6 +36,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6309291524670124133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940544020588077984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff93f4dde2e706f4283680be982a5656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Duration: 300
+  _DelayBefore: 1.5
+  _Description: tween1
+  _PlayOnAwake: 1
+  _OnTweenFinish:
+    m_PersistentCalls:
+      m_Calls: []
+  _OnTweenStop:
+    m_PersistentCalls:
+      m_Calls: []
+  _Target: {fileID: 7200015250559860557}
+  _FromValue: {x: 0, y: 0}
+  _ToValue: {x: 0, y: 100}
+  _AutoOriginValue: 0
+  _AutoTargetValue: 0
+  _EaseType: 0
+  _PingPong: 0
+  _PingPongDelay: 0
+  _PongDelay: 0
 --- !u!1 &1868214813059431717
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +270,7 @@ MonoBehaviour:
   - Name: txt_msg
     Object: {fileID: 8678087339868259999}
   - Name: ani_out
-    Object: {fileID: 0}
+    Object: {fileID: 940544020588077984}
   TypeBindInfos: []
 --- !u!1 &6993016970922602934
 GameObject:

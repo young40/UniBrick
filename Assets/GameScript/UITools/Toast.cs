@@ -31,12 +31,10 @@ public class Toast: XUIBehaviour
         base.Start();
 
         txt_msg.text = message;
-            
-        float showTime = ani_out.DelayBefore + ani_out.Duration;
 
-        Observable.Timer(TimeSpan.FromSeconds(showTime)).Subscribe(_ =>
+        this.ani_out.OnFinish += () =>
         {
             this.Close();
-        });
+        };
     }
 }
