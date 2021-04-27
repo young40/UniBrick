@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff93f4dde2e706f4283680be982a5656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Duration: 300
+  _Duration: 0.5
   _DelayBefore: 1.5
   _Description: tween1
   _PlayOnAwake: 1
