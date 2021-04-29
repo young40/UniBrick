@@ -138,7 +138,7 @@
       "depth": 0,
       "source": "local",
       "dependencies": {
-        "com.neuecc.unirx": "7.1.0"
+        "io.nekonya.tinax.core": "6.6.24"
       }
     },
     "io.nekonya.tinax.uikit": {
@@ -157,7 +157,7 @@
       "source": "local",
       "dependencies": {
         "io.nekonya.tinax.uikit": "6.6.17",
-        "io.nekonya.tinax.tween": "6.6.1"
+        "io.nekonya.tinax.tween": "6.6.2"
       }
     },
     "io.nekonya.tinax.uikit.ilruntime": {
