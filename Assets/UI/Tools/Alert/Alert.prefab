@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenUI: 1
   FullScreenUI: 0
-  SortingLayerId: 90000
+  SortingLayerId: 287484963
   AllowMultiple: 0
   UIMainHandler: {fileID: 5992689561059522456}
   OnOpenUIEvent:
