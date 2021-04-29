@@ -1,0 +1,6 @@
+[submodule "TinaXCode/TinaX.Tween"]
+	path = TinaXCode/TinaX.Tween
+	url = https://github.com/yomunsam/TinaX.Tween.git
+[submodule "TinaXCode/TinaX.UIKit.Animation.git"]
+	path = TinaXCode/TinaX.UIKit.Animation.git
+	url = https://github.com/yomunsam/TinaX.UIKit.Animation.git
