@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Duration: 0.5
-  _DelayBefore: 200
+  _DelayBefore: 1
   _Description: tween1
   _PlayOnAwake: 1
   _OnTweenFinish:
